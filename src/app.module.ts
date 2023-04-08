@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
-import { AppGateway } from "./app/app.gateway";
+import { AppGateway } from "./app.gateway";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Chat } from "./chat.entity";
 
@@ -12,8 +12,7 @@ import { Chat } from "./chat.entity";
     TypeOrmModule.forRoot({
       type: "postgres",
       host: "localhost",
-      username: "<USERNAME>", // should be my username?????
-      password: "<PASSWORD>",
+      username: "<USERNAME>", // todo: move to env
       database: "chat",
       entities: [Chat],
       synchronize: true,
